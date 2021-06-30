@@ -55,6 +55,33 @@ const dataLaptop2 = [
   },
 ]
 
-new Device(dataLaptop, 7).knapsack()
+const dataLaptop3 = [
+  {
+    nm_laptop : 'ABC',
+    berat : 2,
+    harga : 2600000
+  },
+   {
+    nm_laptop : 'DEF',
+    berat : 3,
+    harga : 2600000
+  },
+   {
+    nm_laptop : 'GHI',
+    berat : 2,
+    harga : 2450000
+  },
+   {
+    nm_laptop : 'JKL',
+    berat : 4,
+    harga : 4800000
+  },
+   {
+    nm_laptop : 'MNO',
+    berat : 5,
+    harga : 5100000
+  },
+]
+new Device(dataLaptop3, 7).knapsack()
 /*const laptop = new Device().insertionSort(dataLaptop)
 console.log(laptop)*/

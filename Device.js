@@ -3,7 +3,7 @@ const Graph = require('./Graph');
 class Device extends Graph{
   knapsack(){
     let hasil = 0;
-    this.insertionSortBerat()
+    this.insertionSort()
     console.log(this.processKnapsack())
   }
 
@@ -34,12 +34,12 @@ class Device extends Graph{
           newData = [...newArr]
         }
       }
-      //console.log(newData, heaviest, biggest_price)
     }
+    console.log(biggest_price)
     return newData
   }
 
-  insertionSortBerat(){
+  insertionSort(){
     for(let i = 1; i < this.data.length; i++){
       let key = this.data[i]
       let j = i - 1
@@ -50,19 +50,6 @@ class Device extends Graph{
       this.data[ j + 1] = key
     }
     return this.data
-  }
-
-  insertionSortHarga(){
-      for(let i = 1; i < this.data.length; i++){
-      let key = this.data[i]
-      let j = i - 1
-      while(j >= 0 && key.harga > this.data[j].harga){
-        this.data[j+1] = this.data[j]
-        j--
-      }
-      this.data[ j + 1] = key
-  }
-  return this.data
   }
 }
 

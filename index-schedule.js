@@ -1,3 +1,4 @@
+const Schedule = require('./Schedule')
 const jadwal_kuliah = [
   {
     name : "Bahasa Indonesia",
@@ -18,7 +19,7 @@ const jadwal_kuliah = [
     name :"Matematika",
     start : 9,
     end : 10
-  }
+  },
   {
     name :"Struktur Data",
     start : 10,
@@ -35,3 +36,5 @@ const jadwal_kuliah = [
     end : 13
   }
 ]
+
+new Schedule(jadwal_kuliah, null).knapsack()
