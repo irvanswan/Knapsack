@@ -3,42 +3,43 @@ const Graph = require('./Graph');
 class Device extends Graph{
   knapsack(){
     let hasil = 0;
-    let dataArr = []
-    console.log(this.insertionSortBerat())
-    //this.insertionSortHarga()
+    this.insertionSortBerat()
+    console.log(this.processKnapsack())
+  }
 
-    /*for(let i = 0; i < this.data.length; i++){
-        let temp = this.data[i].harga;
-        console.log(this.data[i])
-        if(this.data[i].berat <= 7){
-          let key = this.data[i].berat
-          let j = i + 1
-          let temp2 = this.data[i].harga
-          let newArr=[this.data[i]];
-          for(j; j < this.data.length; j++){
-            if(key + this.data[j].berat <= this.maksimal){
-              newArr.push(this.data[j])
-              key += this.data[j].berat
-              temp2 += this.data[j].harga
-            }
-          }
-          if(temp2 > temp){
-            dataArr = newArr
-            temp = temp2
-          }
-        console.log('temp2',temp2)
+  processKnapsack(){
+    let newData = []
+    let heaviest = 0; // 
+    let biggest_price = 0; //
+    for(let i = 0; i < this.data.length; i++){
+      let newArr = [this.data[i]]
+      //console.log(this.data[i])
+      let local_weight = this.data[i].berat;
+      let local_price = this.data[i].harga;
+      let j = i + 1;
+      while(j < this.data.length){
+        if(local_weight + this.data[j].berat > this.maksimal){
+          j++
+        }else{
+          newArr.push(this.data[j])
+          local_weight += this.data[j].berat;
+          local_price += this.data[j].harga
+          j++
         }
-      if(temp > hasil){
-        hasil = temp    
       }
-      console.log(dataArr)
-      return hasil
-    }*/
-
+      if(local_weight >= heaviest){
+        if(local_price > biggest_price){
+          heaviest = local_weight
+          biggest_price = local_price
+          newData = [...newArr]
+        }
+      }
+      //console.log(newData, heaviest, biggest_price)
+    }
+    return newData
   }
 
   insertionSortBerat(){
-    let newArr = []
     for(let i = 1; i < this.data.length; i++){
       let key = this.data[i]
       let j = i - 1
@@ -48,19 +49,7 @@ class Device extends Graph{
       }
       this.data[ j + 1] = key
     }
-    //return this.data
-    console.log(this.data)
-    for(let i = 0; i < this.data.length; i++){
-      let key = this.data[i]
-      for(let j = i + 1; j < this.data.length; j++){
-          let hasil = key.berat + this.data[j].berat
-          while(hasil <= 7 && j < this.data.length ){
-            hasil += 
-            newArr.push([key, this.data[j]])
-          }
-      }
-    }
-    console.log(newArr)
+    return this.data
   }
 
   insertionSortHarga(){

@@ -2,17 +2,17 @@ const Device = require('./Device')
 const dataLaptop = [
   {
     nm_laptop : 'ABC',
-    berat : 2,
+    berat : 5,
     harga : 2600
   },
    {
     nm_laptop : 'DEF',
-    berat : 3,
+    berat : 4,
     harga : 4000
   },
    {
     nm_laptop : 'GHI',
-    berat : 2,
+    berat : 3,
     harga : 4000
   },
    {
@@ -22,7 +22,7 @@ const dataLaptop = [
   },
    {
     nm_laptop : 'MNO',
-    berat : 5,
+    berat : 2,
     harga : 5100
   },
 ]
